@@ -1,0 +1,35 @@
+<section>
+    <div class="container">
+        <div class="hero">
+            <h1>PelisUP!</h1>
+            <h2>Plataforma para ver peliculas y series 😁</h2>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder=" 🔍Buscar serie o película" aria-label="Search" [(ngModel)]="paraBuscar" (ngModelChange)="buscar(paraBuscar)" [ngModelOptions]="{standalone: true}">
+            </form>
+            <button type="button" class="btn btn-lg botonTab" (click)="cambiarCategoria('Todos')" [ngClass]="selected == 'Todos' ? 'button-Selected' : 'button-NoSelected' ">Todos</button>
+            <button type="button" class="btn btn-lg botonTab" (click)="cambiarCategoria('movie')" [ngClass]="selected == 'movie' ? 'button-Selected' : 'button-NoSelected' ">Películas</button>
+            <button type="button" class="btn btn-lg botonTab" (click)="cambiarCategoria('tv')" [ngClass]="selected == 'tv' ? 'button-Selected' : 'button-NoSelected' ">Series</button>
+        </div>
+    </div>
+</section>
+
+<section class="wrapperCards">
+    <div class="container">
+        <div class="row">
+            <div class="col-4" *ngFor="let movie of movies_series.results">
+                <div class="card" *ngIf="selected == movie.media_type || selected == 'Todos' ">
+                    <app-cards [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name"></app-cards>
+                </div>
+                <div class="card" *ngIf="selected == 'movie' ">
+                    <app-cards [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name"></app-cards>
+                </div>
+                <div class="card" *ngIf="selected == 'tv' ">
+                    <app-cards [imagen]="movie.poster_path" [nombre]="movie.title || movie.original_name"></app-cards>
+                </div>
+            </div>
+        
+        </div>
+    
+    </div>
+</section>
+
