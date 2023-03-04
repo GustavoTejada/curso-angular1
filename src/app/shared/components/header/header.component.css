@@ -1,0 +1,30 @@
+header { 
+    background: rgba(18, 24, 41, 0.8);
+    font-family: 'Open Sans', sans-serif;
+	padding: 30px 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .logo {
+	font-size: 40px;
+}
+
+header nav a {
+	color: #AAA;
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+header nav a:hover {
+	color: #FFF;
+}
