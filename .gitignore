@@ -106,6 +106,9 @@ dist
 
 # Serverless directories
 .serverless/
+.angular/
+.idea/
+.vscode
 
 # FuseBox cache
 .fusebox/

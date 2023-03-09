@@ -7,6 +7,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { RoutesModule } from './routes/routes.module';
 import { HttpClientModule } from '@angular/common/http';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCvd-UZjPTR7Bw0oaq8p1uv-4uIPT1qPIU",
+  authDomain: "pelisup-428d3.firebaseapp.com",
+  projectId: "pelisup-428d3",
+  storageBucket: "pelisup-428d3.appspot.com",
+  messagingSenderId: "387687270744",
+  appId: "1:387687270744:web:fa9bed2c9b503333957d2d"
+};
 
 @NgModule({
   declarations: [
@@ -18,9 +31,14 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     SharedModule,
     RoutesModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [
+    { provide: FIREBASE_OPTIONS, useValue: firebaseConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
