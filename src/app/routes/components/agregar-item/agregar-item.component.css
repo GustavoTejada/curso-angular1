@@ -1,0 +1,12 @@
+.wrapperCards .container {
+	Display: Flex;
+	Gap: 16px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	}
+
+
+.card {
+	background-color: #323B54;
+	width: 100%;
+}

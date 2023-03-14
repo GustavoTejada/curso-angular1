@@ -5,4 +5,7 @@
     <div class="contenido">
         <h3>{{nombre}}</h3>
     </div>
+    <div class="card-footer" *ngIf="conBoton">
+        <button class="btn btn-primary" (click)="addNewItem()">Agregar a mi lista</button>
+    </div>
 </div>

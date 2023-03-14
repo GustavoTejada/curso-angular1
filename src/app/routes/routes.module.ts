@@ -7,7 +7,8 @@ import { IngresarComponent } from './components/ingresar/ingresar.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AgregarItemComponent } from './components/agregar-item/agregar-item.component';
 
 
 @NgModule({
@@ -15,13 +16,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InicioComponent,
     PeliculasComponent,
     SeriesComponent,
-    IngresarComponent
+    IngresarComponent,
+    DashboardComponent,
+    AgregarItemComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   exports: [
     InicioComponent
