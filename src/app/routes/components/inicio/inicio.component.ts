@@ -17,7 +17,7 @@ export class InicioComponent {
   paraBuscar: string = '';
 
   constructor(
-    private _moviesService: MoviesService
+    private _moviesService: MoviesService,
   ) {
   }
 
@@ -53,5 +53,21 @@ export class InicioComponent {
   buscar(value: string) {
     console.log(value);
   }
+
+  // async addtoFirestore() {
+  //   const response = await this._firestoreService.create({
+  //     name: 'pedrito',
+  //     director: 'juancho'
+  //   });
+  //   console.log(response);
+  // }
+
+  // getAllfromFirestore() {
+  //   this._firestoreService.getAll().subscribe({
+  //     next: (data) => {
+  //       console.log(data);
+  //     }
+  //   })
+  // }
 
 }
