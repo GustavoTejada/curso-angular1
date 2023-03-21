@@ -109,6 +109,7 @@ dist
 .angular/
 .idea/
 .vscode
+.angular
 
 # FuseBox cache
 .fusebox/
